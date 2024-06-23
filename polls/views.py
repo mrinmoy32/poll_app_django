@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.http import Http404
 from django.template import loader
@@ -12,15 +12,22 @@ def index(request):
         "latest_question_list": latest_question_list,
     }
     return HttpResponse(template.render(context, request))
+    # Below expression also works
+    # return render(request, "polls/index.html", {"latest_question_list": latest_question_list}) 
 
 def greet(request):
     return HttpResponse("Hi My name is Django")
 
 def detail(request, question_id):
-    try:
-        question = Question.objects.get(pk=question_id)
-    except Question.DoesNotExist:
-        raise Http404("Question does not exist")
+    # try:
+    #     question = Question.objects.get(pk=question_id)
+    # except Question.DoesNotExist:
+    #     raise Http404("Question does not exist")
+    # return render(request, "polls/detail.html", {"question": question})
+
+    # Using get_object_or_404
+
+    question = get_object_or_404(Question, pk=question_id)
     return render(request, "polls/detail.html", {"question": question})
 
 
