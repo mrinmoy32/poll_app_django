@@ -55,7 +55,7 @@ ROOT_URLCONF = 'poll_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],  # Adding a base directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
