@@ -89,6 +89,7 @@ Open your web browser and go to `http://127.0.0.1:8000` to see the application i
 
 - Official Django Documentation: [Django Tutorial](https://docs.djangoproject.com/en/5.0/intro/tutorial01)
 - Django Debug Toolbar: [Installation Guide](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)
+- Github Django admin default template directory: [Default Django Admin Templates](https://github.com/django/django/blob/main/django/contrib/admin/templates/admin/base_site.html)
 
 ## License
 
